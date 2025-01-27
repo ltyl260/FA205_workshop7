@@ -46,16 +46,15 @@ class Duck {
     circle(this.x+(1.2*this.l/5),this.y-(1*this.l/5),this.l/10);
   }
   move(){
-    // movement conditions made more specific
+    //movement conditions made more specific
     if (this.x > (width - this.l)|| this.x < (0 + this.l)){
       this.t = this.t * -1;
     }
     if (((this.y > (height - (1.2*this.l))) || (this.y < (0  + (0.85*this.l))))){ 
       this.u = this.u * -1;
     }
-    this.y += this.u;
-    this.x += this.t;
-
+    this.x += random(this.t);
+    this.y += random(this.t);
   
  }
   colour(){
@@ -93,7 +92,7 @@ class Duck {
   animate(){
     this.move();
     this.colour();
-    this.zoom(this.z,this.z+10);
+    this.zoom(this.z,this.z+random(5));
     this.show();
     }
 }
